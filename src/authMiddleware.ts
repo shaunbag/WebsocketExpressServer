@@ -30,6 +30,10 @@ export const authMiddleWare = (req: Request, res: Response, next: NextFunction) 
     })
 }
 
+export const verifyJwt = (token: string): {id: number, name: string} => {
+    return jwt.verify(token, JWT_SECRET) as { id: number, name: string};
+}
+
 export const generateToken = (user: User) => {
     return jwt.sign({id: user.id, username: user.name}, JWT_SECRET! as string, { expiresIn: '1h' })
 }
