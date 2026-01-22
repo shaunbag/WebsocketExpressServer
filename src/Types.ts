@@ -1,10 +1,11 @@
 export type User = {
     name: string;
-    id: string;
+    id: number;
 }
 
 export type Message = {
     type:string;
     from: User;
-    content: string
+    content: string;
+    createdAt: Date;
 }
