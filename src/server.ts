@@ -31,7 +31,7 @@ function removeUser(userId: number) {
 
 // cors config setup to allow origin for inital testing
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 200
@@ -138,5 +138,5 @@ app.post('/login', async (req: Request, res: Response) => {
 })
 
 server.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running`);
 });
