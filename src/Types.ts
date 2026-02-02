@@ -8,4 +8,5 @@ export type Message = {
     from: User;
     content: string;
     createdAt: Date;
+    reactions: string[];
 }
