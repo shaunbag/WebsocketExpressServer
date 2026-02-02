@@ -16,8 +16,6 @@ const wss = new WebSocketServer({ server: server });
 // this users array is so that we can tell othger users connected who else is connected, TODO: dm and private ws messaging
 let users: User[] = [];
 
-
-
 /**Functions to hanle the users online array */
 function addUser(user: User) {
   if (users.some(u => u.id === user.id)) return;
